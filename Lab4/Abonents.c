@@ -51,10 +51,10 @@ void deleteAbonent(abonent* abonents){
         return;
     }
 
-    if (abonents[numberAbonent-1].isdelete == 1) {
-        printf("Абонент уже удалён или не существует\n\n");
-        return;
-    }
+    abonents[numberAbonent-1].isdelete = 1;
+    memset(abonents[numberAbonent-1].name, '0', 10);
+    memset(abonents[numberAbonent-1].second_name, '0', 10);
+    memset(abonents[numberAbonent-1].tel, '0', 10);
 }
 
 void printfAbonent(abonent abonent, int i){
@@ -89,6 +89,9 @@ int main(){
     abonent abonents[100];
     for(int i = 0; i < 100; i++){
         abonents[i].isdelete = 1;
+        memset(abonents[numberAbonent-1].name, '0', 10);
+        memset(abonents[numberAbonent-1].second_name, '0', 10);
+        memset(abonents[numberAbonent-1].tel, '0', 10);
     }
     while(1){
         printf("1) Добавить абонента\n2) Удалить абонента\n3) Поиск абонентов по имени\n4) Вывод всех записей\n5) Выход\n");
