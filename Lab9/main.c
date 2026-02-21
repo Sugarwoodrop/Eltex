@@ -10,11 +10,14 @@ int main(){
     }
     error = write_in_file(fd, "String from file");
     if(error == ERROR){
+        close(fd);
         return ERROR;
     }
     error = read_in_file(fd);
     if(error == ERROR){
+        close(fd);
         return ERROR;
     }
+    close(fd);
     return SUCCESS;
 }
